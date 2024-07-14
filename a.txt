@@ -1,0 +1,82 @@
+Desarrollo
+En esta segunda etapa deberán realizar lo siguiente:
+• Al comenzar con la ejecución del programa, hacer que el usuario elija la opción
+“logueo” o “registrarse”. *
+
+o Los estudiantes estarán guardados en un arreglo, y deberán darse de alta al
+comienzo de la ejecución del programa. Deberán ser mínimo 4 estudiantes y
+máximo 8.
+o Los moderadores estarán guardados en un arreglo, y deberán darse de alta al
+comienzo de la ejecución del programa. Deberán ser mínimo 1 moderador y
+máximo 4.
+
+----Para acceder a la sección de logueo, deberá haber aunque sea 1 moderador y
+4 estudiantes cargados----
+
+-- Hacer el menú para cada tipo de usuario (Estudiante y Moderador) --
+
+o Pedir un nombre de usuario (email) y contraseña al operador. Verificar que
+existan el usuario y su clave guardados en el sistema, y de acuerdo al tipo de
+usuario que está ingresando, presentarle el menú correspondiente.
+
+o Reusar el control de claves desarrollado en el TP1, permitiendo hasta 3
+intentos como máximo. -*
+
+o Tener en cuenta que, además de ingresar un par usuario / contraseña
+correctos, también se debe chequear que el estado del usuario sea “ACTIVO”
+(string). Caso contrario, el login NO será correcto.
+
+o Tanto el ID de cada estudiante como de cada moderador va a ser siempre un
+número entero auto-incremental, que comienza en 0.
+
+Módulo 1: Estudiantes
+
+Para esta segunda etapa, solamente se pedirán realizar los módulos:
+    1. Ges�onar mi perfil
+        a. Editar mis datos personales
+        b. Eliminar mi perfil
+    2. Ges�onar candidatos
+        a. Ver candidatos
+        b. Reportar un candidato
+    4. Reportes Estadís�cos
+El resto de las opciones deberán mostrar un cartel aclaratorio que diga “En Construcción”.
+
+Descripción de los módulos:
+
+1.b Eliminar mi perfil: mostrar un cartel aclaratorio, preguntando confirmación si realmente se desea eliminar el perfil. En caso de elegir la opción “si”, cambiar el estado del usuario por inac�vo, y volver a la pantalla de login del trabajo.
+
+2.a Ver candidatos: al ingresar a esta opción, se deben mostrar todos los estudiantes. Mostrar nombre, fecha de nacimiento, edad, biogra�a y hobbies. Una vez mostrada toda la información, permi�r ingresar en una variable me-gusta el nombre del estudiante con el cual le gustaría en un futuro hacer un Matcheo. Verificar que el nombre sea correcto. Para mostrar la edad, sabiendo que la fecha de nacimiento se guarda como string en el formato YYYY-MM-DD siendo YYYY el año, MM el mes y DD el día (ej: el 1 de diciembre de 2002 sería 2002-12-01), calcular y mostrar la edad del candidato.
+
+2.b Reportar un Candidato: al ingresar a esta sección, se deberá pedir el ID o nombre de usuario
+(cualquiera de los dos) de un candidato, y el mo�vo por el cual se está reportando al mismo.
+Validar que el candidato exista, y dar de alta un reporte con el ID del usuario actual como
+reportante, el ID del usuario reportado, el mo�vo dado y el estado inicial 0 (ver sección 2.a de
+moderadores para obtener más información acerca de los distintos estados de un reporte).
+4. Reportes Estadís�cos mostrar:
+• con qué porcentaje de todos los candidatos posibles (dis�ntos a nosotros) se matcheo
+ambas veces
+• a cuántos le pusimos “me gusta” pero no nos han devuelto el match
+• cuántos estudiantes nos dieron “me gusta”, a los cuáles nosotros no le hemos dado “me
+gusta todavía”. Mostrarlo de la siguiente forma:
+Matcheados sobre el % posible: 50%
+Likes dados y no recibidos: 2
+Likes recibidos y no respondidos: 3
+Módulo 2: Moderadores
+Para esta segunda etapa, solamente se pedirán realizar los módulos:
+    1. Gestionar usuarios
+        a. Desactivar usuario
+        b. Volver
+    2. Gestionar Reportes
+        a. Ver reportes
+        b. Volver
+1.a Desactivar un Usuario: se ingresa el ID o el nombre de usuario, se busca si el usuario existe,
+y luego se muestra una pantalla idéntica a la de “Eliminar mi Perfil”.
+2.a Ver reportes: los reportes pueden tener como estado 0, 1 y 2. 0 quiere decir que el reporte
+todavía no ha sido visto por un moderador o un administrador, 1 quiere decir que el reporte ha
+sido tomado y el reportado ha sido desac�vado, y 2 quiere decir que el reporte ha sido
+ignorado.
+Se mostrarán los reportes los cuáles tanto el usuario reportante como el reportado están
+ac�vos, y que tengan un estado = 0. Por cada reporte, se preguntará cómo se quiere proceder:
+ignorar reporte o bloquear al reportante. En caso de seleccionar la primer opción, el estado del
+reporte será actualizado a 2. En caso de seleccionar la segunda opción, el estado del reporte
+será actualizado a 1, y el usuario reportado será desac�vado (su estado será inac�vo).

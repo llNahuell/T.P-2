@@ -39,3 +39,5 @@ def bonus1():
     
 
 bonus1()
+
+[['Student', 'estudiantel@ayed.com', '111222, 0, 0, 0, 0, 0', 'ACTIVE'], ['Student', 'estudiante2@ayed.com', '222333', '8, 6, 8, 6, 8', 'ACTIVE'], ['Student', 'estudiante3@ayed.com', '333444, 0, 0, 0, 8, 9', 'ACTIVE'], ['Student', 'estudiante4@ayed.com', '444555', '6, 9, 6, 9, 6', 'ACTIVE'], ['Student', 'estudiante5@ayed.com', '555666", 8, 0, 0, 0, 0, INACTIVE'], ['Student', 'estudiante6@ayed.com', '666777, 0, 0, 0, 0, 0, INACTIVE'], ['Student', 'estudiante7@ayed.com", "777888, 0, 0, 0, 0, 0', 'INACTIVE'], ['Student', 'estudiantes@ayed.com', '888999, 8, 6, 8, 6, 8, INACTIVE']]
