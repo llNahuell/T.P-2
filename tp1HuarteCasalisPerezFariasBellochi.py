@@ -2,8 +2,10 @@ import os
 import getpass
 import time
 import math
+from math import factorial
 from datetime import datetime
 import random
+
 
 
 
@@ -125,7 +127,7 @@ def msubmenu1 ():
            ██                                                            ██
            ██    3. STADISTIC REPORTS                                    ██
            ██                                                            ██
-           ██    4. EXIT                                                 ██
+           ██    0. EXIT                                                 ██
            ██                                                            ██
            ████████████████████████████████████████████████████████████████
         ''')
@@ -143,7 +145,7 @@ def msubmenu2 ():
            ██                                                            ██
            ██    3. STADISTIC REPORTS                                    ██
            ██                                                            ██
-           ██    4. EXIT                                                 ██
+           ██    0. EXIT                                                 ██
            ██                                                            ██
            ████████████████████████████████████████████████████████████████
         ''')
@@ -224,7 +226,8 @@ def submenu3 ():
            ██    3. MATCHING                                             ██
            ██        a.CHECK MATCHES                                     ██
            ██        b.DELETE MATCHIN                                    ██
-           ██        c.RETURN                                            ██
+           ██        c.BONUS TRACK 2                                     ██
+           ██        d.RETURN                                            ██
            ██                                                            ██
            ██    4. STADISTIC REPORTS                                    ██
            ██                                                            ██
@@ -895,7 +898,7 @@ def roulette():
     suma = 0
     while suma != 100:
         clears()
-        print("-"*50,"| Ruleta |","-"*50)
+        print("~"*50,"| Roulette |","~"*50)
         print("Deberá ingresar 3 probabilidades que sumen 100")
         probabilidadMatch1 = input("Ingrese la probabilidad de matcheo de la persona A: ")
         if probabilidadMatch1.isnumeric() == True:
@@ -932,7 +935,6 @@ def roulette():
 
 def bonus1():
     edades = [21, 18, 20, 19, 23, 24]
-    contador = 0
     print("~"*50, "|Bonus track 1|", "~"*50)
     for i in range(len(edades)):
         for j in range(len(edades)):
@@ -943,18 +945,20 @@ def bonus1():
     print(edades)
     for i in range(len(edades)-1):
         if int(edades[i]) != int(edades[i+1]) -1:
-            contador += 1
-            print("hay", contador, "hueco/s")
+            print(int(edades[i]) + 1, "es el numero que falta")
+            time.sleep(2)
 
 def bonus2():
+    print("~"*50, "|Bonus track 2|", "~"*50)
     i= 0
-    j= 0
     contador = 0
     for i in range(SRT):
         if (students[i][SCT-1] == ASTA):
                 contador += 1
-    cant_matcheos = (contador**2) - contador
-    print(cant_matcheos)
+    cant_matcheos = factorial(contador)/ (factorial(2) * factorial(contador - 2))
+    print("la cantidad de matcheos posibles es", cant_matcheos)
+    time.sleep(2)
+
 
 
 def validate_date(D, M, Y):
@@ -1661,7 +1665,7 @@ while opt != "2" and failat != 3:
                         clears ()
                         submenu3 ()
                         s_opt32 = str(input("\t\t\tSUBSELECT AN OPTION FROM MENU 3: "))
-                        while s_opt32 != "c":
+                        while s_opt32 != "d":
                             if s_opt32 == "a":
                                 clears ()
                                 submenu3a ()
@@ -1696,7 +1700,10 @@ while opt != "2" and failat != 3:
                                 submenu3 ()
                                 underconstruction ()
                                 time.sleep (2)
-                            elif s_opt32 != "a" and s_opt32 != "b" and s_opt32 != "c":
+                            elif s_opt32 == "c":
+                                clears ()
+                                bonus2()
+                            elif s_opt32 != "a" and s_opt32 != "b" and s_opt32 != "c" and s_opt32 != "d":
                                 clears ()
                                 submenu3 ()
                                 invalidoption ()
@@ -1740,6 +1747,7 @@ while opt != "2" and failat != 3:
                         clears ()
                         msubmenu1 ()
                         s_opt88 = str(input("\t\t\t\t ENTER THE OPTION: "))
+                        s_opt88 = s_opt88.lower()
                         while s_opt88 != "b":
                             if s_opt88 == "a":
                                 clears()
@@ -1785,6 +1793,7 @@ while opt != "2" and failat != 3:
                         clears ()
                         msubmenu2 ()
                         s_opt77 = str(input("\t\t\t\t ENTER THE OPTION: "))
+                        s_opt77 = s_opt77.lower()
                         while s_opt77 != "c":
                             if s_opt77 == "a":
                                 clears()
@@ -1899,6 +1908,3 @@ while opt != "2" and failat != 3:
         mainmenu()
         opt = str(input("\t\t\t\t   ENTER OPTION: "))
         clears()
-
-
-bonus2()
