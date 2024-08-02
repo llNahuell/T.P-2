@@ -6,7 +6,7 @@ from math import factorial
 from datetime import datetime
 import random
 
-
+a
 
 
 #----------------------------------------GMENU-------------------------------------#
