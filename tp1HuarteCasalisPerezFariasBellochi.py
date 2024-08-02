@@ -1135,13 +1135,13 @@ def reason ():
     i = 0
     clears()
     listofreasons()
-    rea = str(input("\t\t\tENTER NUMBER: "))
+    rea = input("\t\t\tENTER NUMBER: ")
     while rea != "1" and rea !="2" and rea != "3" and rea!="4" and rea!="5":
         invalidoption()
         time.sleep(2)
         clears()
         listofreasons()
-        rea = str(input("\t\t\tENTER NUMBER: "))
+        rea = input("\t\t\tENTER NUMBER: ")
     clears()
     rea = int (rea)
     rea = globals()[f"REASON{rea}"]
@@ -1150,13 +1150,13 @@ def reason ():
 def detail():
     clears()
     enterdetails()
-    edet = str(input("\t\t\tENTER DETAILS: "))
+    edet = input("\t\t\tENTER DETAILS: ")
     while len(edet) > 256:
         longbio()
         time.sleep(3)
         clears()
         enterdetails()
-        edet = str(input("\t\t\tENTER DETAILS: "))
+        edet = input("\t\t\tENTER DETAILS: ")
     return edet
 
 def filler (A, filas, columnas, B, spos, rcand):
@@ -1262,53 +1262,52 @@ def enterdob ():
 def entersex():
     clears()
     entersexfm()
-    sex = str(input("\t\t\tENTER M/Y SEX:"))
+    sex = input("\t\t\tENTER M/Y SEX:")
     while sex != "M" and sex != "F":
         clears()
         invalidoption()
         time.sleep(2)
         clears()
-        clears()
         entersexfm()
-        sex = str(input("\t\t\tENTER M/Y SEX:"))
+        sex = input("\t\t\tENTER M/Y SEX:")
     clears()
     return sex
 
 def enterbio():
     enterbiog()
-    ebio = str(input("\t\t\tENTER BIOGRAPHY:"))
+    ebio = input("\t\t\tENTER BIOGRAPHY:")
     while len(ebio) > 256:
         clears()
         longbio()
         time.sleep(2)
         clears()
-        ebio = str(input("\t\t\tENTER BIOGRAPHY:"))
+        ebio = input("\t\t\tENTER BIOGRAPHY:")
     clears()
     return ebio
 
 def enterhob():
     enterhobies()
-    ehob = str(input("\t\t\tENTER HOBBIE:"))
+    ehob = input("\t\t\tENTER HOBBIE:")
     while len(ehob) > 256:
         clears()
         invalidoption()
         time.sleep(2)
         clears()
         enterhobies()
-        ehob = str(input("\t\t\tENTER HOBBIE:"))
+        ehob = input("\t\t\tENTER HOBBIE:")
     clears()
     return ehob
 
 def writename():
     entername()
-    ename = str(input("\t\t\tENTER FULLNAME:"))
+    ename = input("\t\t\tENTER FULLNAME:")
     while len(ename) > 32:
         clears()
         invalidoption()
         time.sleep(2)
         clears()
         entername()
-        ename = str(input("\t\t\tENTER FULLNAME:"))
+        ename = input("\t\t\tENTER FULLNAME:")
         clears()
     return ename
 
@@ -1437,14 +1436,14 @@ failat = 0
 clears()
 logo()
 mainmenu()
-opt = str(input("\t\t\t\t   ENTER OPTION: "))
+opt = input("\t\t\t\t   ENTER OPTION: ")
 clears()
 while opt != "2" and failat != 3:
     exit = True
     if opt == "1":
         while exit and failat != 3:
             clearnscreen()
-            email = str(input("\t\t\tENTER USERNAME: "))
+            email = input("\t\t\tENTER USERNAME: ")
             clearnscreen()
             epasw = getpass.getpass(prompt = "\t\t\tENTER PASSWORD:***********", stream=None)
             clears()
@@ -1753,7 +1752,7 @@ while opt != "2" and failat != 3:
                                 clears()
                                 SHOWCANDIDATES(students,SRT,3,SCT)
                                 mdelprofile()
-                                s_opt888 = str(input("\n\t\t\t ENTER OPTION: "))
+                                s_opt888 = input("\n\t\t\t ENTER OPTION: ")
                                 while s_opt888 != "2":
                                     if s_opt888 == "1":
                                         clears()
