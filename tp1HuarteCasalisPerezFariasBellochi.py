@@ -6,7 +6,6 @@ from math import factorial
 from datetime import datetime
 import random
 
-a
 
 
 #----------------------------------------GMENU-------------------------------------#
@@ -1135,13 +1134,13 @@ def reason ():
     i = 0
     clears()
     listofreasons()
-    rea = str(input("\t\t\tENTER NUMBER: "))
+    rea = input("\t\t\tENTER NUMBER: ")
     while rea != "1" and rea !="2" and rea != "3" and rea!="4" and rea!="5":
         invalidoption()
         time.sleep(2)
         clears()
         listofreasons()
-        rea = str(input("\t\t\tENTER NUMBER: "))
+        rea = input("\t\t\tENTER NUMBER: ")
     clears()
     rea = int (rea)
     rea = globals()[f"REASON{rea}"]
@@ -1150,13 +1149,13 @@ def reason ():
 def detail():
     clears()
     enterdetails()
-    edet = str(input("\t\t\tENTER DETAILS: "))
+    edet = input("\t\t\tENTER DETAILS: ")
     while len(edet) > 256:
         longbio()
         time.sleep(3)
         clears()
         enterdetails()
-        edet = str(input("\t\t\tENTER DETAILS: "))
+        edet = input("\t\t\tENTER DETAILS: ")
     return edet
 
 def filler (A, filas, columnas, B, spos, rcand):
@@ -1262,53 +1261,52 @@ def enterdob ():
 def entersex():
     clears()
     entersexfm()
-    sex = str(input("\t\t\tENTER M/Y SEX:"))
+    sex = input("\t\t\tENTER M/Y SEX:")
     while sex != "M" and sex != "F":
         clears()
         invalidoption()
         time.sleep(2)
         clears()
-        clears()
         entersexfm()
-        sex = str(input("\t\t\tENTER M/Y SEX:"))
+        sex = input("\t\t\tENTER M/Y SEX:")
     clears()
     return sex
 
 def enterbio():
     enterbiog()
-    ebio = str(input("\t\t\tENTER BIOGRAPHY:"))
+    ebio = input("\t\t\tENTER BIOGRAPHY:")
     while len(ebio) > 256:
         clears()
         longbio()
         time.sleep(2)
         clears()
-        ebio = str(input("\t\t\tENTER BIOGRAPHY:"))
+        ebio = input("\t\t\tENTER BIOGRAPHY:")
     clears()
     return ebio
 
 def enterhob():
     enterhobies()
-    ehob = str(input("\t\t\tENTER HOBBIE:"))
+    ehob = input("\t\t\tENTER HOBBIE:")
     while len(ehob) > 256:
         clears()
         invalidoption()
         time.sleep(2)
         clears()
         enterhobies()
-        ehob = str(input("\t\t\tENTER HOBBIE:"))
+        ehob = input("\t\t\tENTER HOBBIE:")
     clears()
     return ehob
 
 def writename():
     entername()
-    ename = str(input("\t\t\tENTER FULLNAME:"))
+    ename = input("\t\t\tENTER FULLNAME:")
     while len(ename) > 32:
         clears()
         invalidoption()
         time.sleep(2)
         clears()
         entername()
-        ename = str(input("\t\t\tENTER FULLNAME:"))
+        ename = input("\t\t\tENTER FULLNAME:")
         clears()
     return ename
 
@@ -1437,14 +1435,14 @@ failat = 0
 clears()
 logo()
 mainmenu()
-opt = str(input("\t\t\t\t   ENTER OPTION: "))
+opt = input("\t\t\t\t   ENTER OPTION: ")
 clears()
 while opt != "2" and failat != 3:
     exit = True
     if opt == "1":
         while exit and failat != 3:
             clearnscreen()
-            email = str(input("\t\t\tENTER USERNAME: "))
+            email = input("\t\t\tENTER USERNAME: ")
             clearnscreen()
             epasw = getpass.getpass(prompt = "\t\t\tENTER PASSWORD:***********", stream=None)
             clears()
@@ -1461,7 +1459,7 @@ while opt != "2" and failat != 3:
                 time.sleep(2)
                 clears()
                 initialscreen()
-                s_opt = str(input("\t\t\t\t ENTER THE OPTION: "))
+                s_opt = input("\t\t\t\t ENTER THE OPTION: ")
                 if s_opt == "0":
                     exit = False
                     clears()
@@ -1469,19 +1467,19 @@ while opt != "2" and failat != 3:
                     if s_opt == "1":
                         clears ()
                         submenu1 ()
-                        s_opt1 = str(input("\t\t\tSUBSELECT AN OPTION FROM MENU 1: "))
+                        s_opt1 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 1: ")
                         s_opt1 = s_opt1.lower()
                         while s_opt1 != "c":
                             if s_opt1 == "a":
                                 clears ()
                                 submenu1a ()
-                                s_opt11 = str(input("\t\t\tSELECT AN OPTION TO ADD INFORMATION: "))
+                                s_opt11 = input("\t\t\tSELECT AN OPTION TO ADD INFORMATION: ")
                                 while s_opt11 != "4":
                                     if s_opt11 == "1":
                                         clears ()
                                         currentdate1()
                                         changedate()
-                                        s_opt12 = str(input("\t\t\t ENTER THE OPTION:  "))
+                                        s_opt12 = input("\t\t\t ENTER THE OPTION:  ")
                                         while s_opt12 != "2":
                                             if s_opt12 == "1":
                                                 ndd = days()
@@ -1501,13 +1499,13 @@ while opt != "2" and failat != 3:
                                             clears ()
                                             currentdate1()
                                             changedate()
-                                            s_opt12 = str(input("\t\t\t ENTER THE OPTION:  "))
+                                            s_opt12 = input("\t\t\t ENTER THE OPTION:  ")
                                     elif s_opt11 == "2":
                                         clears()
                                         currentbio()
                                         displaybio()
                                         changebio()
-                                        s_opt21 = str(input("\t\t\t ENTER THE OPTION: "))
+                                        s_opt21 = input("\t\t\t ENTER THE OPTION: ")
                                         while s_opt21 != "2":
                                             if s_opt21 == "1":
                                                 clears()
@@ -1520,18 +1518,18 @@ while opt != "2" and failat != 3:
                                             currentbio()
                                             displaybio()
                                             changebio()
-                                            s_opt21 = str(input("\t\t\t ENTER THE OPTION: "))
+                                            s_opt21 = input("\t\t\t ENTER THE OPTION: ")
                                     elif s_opt11 == "3":
                                         clears()
                                         currenthob()
                                         displayhob()
                                         changehob()
-                                        s_opt3 = str(input("\t\t\t ENTER THE OPTION:  "))
+                                        s_opt3 = input("\t\t\t ENTER THE OPTION:  ")
                                         while s_opt3 != "2":
                                             if s_opt3 == "1":
                                                 clears()
                                                 enterhobies()
-                                                nhob = str(input("\t\t\t WRITE YOUR HOBBIES: "))
+                                                nhob = input("\t\t\t WRITE YOUR HOBBIES: ")
                                                 nhob = hobvalidator(nhob)
                                                 if nhob != -1:
                                                     students[spos][8] = nhob
@@ -1544,14 +1542,14 @@ while opt != "2" and failat != 3:
                                             currenthob()
                                             displayhob()
                                             changehob()
-                                            s_opt3 = str(input("\t\t\t ENTER THE OPTION:  "))
+                                            s_opt3 = input("\t\t\t ENTER THE OPTION:  ")
                                     clears ()
                                     submenu1a ()
-                                    s_opt11 = str(input("\t\t\tSELECT AN OPTION TO ADD INFORMATION: "))
+                                    s_opt11 = input("\t\t\tSELECT AN OPTION TO ADD INFORMATION: ")
                             elif s_opt1 == "b":
                                 clears ()
                                 delprofile()
-                                s_optb = str(input("\t\t\tSELECT AN OPTION FROM MENU: "))
+                                s_optb = input("\t\t\tSELECT AN OPTION FROM MENU: ")
                                 if s_optb == "1":
                                     deadprofile(students, spos, SCT, reports, RRT)
                                     exit = False
@@ -1573,33 +1571,33 @@ while opt != "2" and failat != 3:
                             else:
                                 clears ()
                                 submenu1 ()
-                                s_opt1 = str(input("\t\t\tSUBSELECT AN OPTION FROM MENU 1: "))
+                                s_opt1 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 1: ")
                                 s_opt1 = s_opt1.lower()
                     elif s_opt == "2":
                         clears ()
                         submenu2 ()
-                        s_opt21 = str(input("\t\t\tSUBSELECT AN OPTION FROM MENU 2: "))
+                        s_opt21 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 2: ")
                         s_opt21 = s_opt21.lower()
                         while s_opt21 != "c":
                             if s_opt21 == "a":
                                 clears()
                                 SHOWCANDIDATES(students,SRT,3,SCT)
                                 matching()
-                                s_opt212 = str(input("\n\t\t\t ENTER OPTION: "))
+                                s_opt212 = input("\n\t\t\t ENTER OPTION: ")
                                 while s_opt212 != "2":
                                     if s_opt212 == "1":
                                         clears()
                                         SHOWCANDIDATES(students,SRT,3,SCT)
                                         enternumber()
                                         alist = acandidate (students, SRT, SCT)
-                                        ncand = str(input("\n\t\t\t ENTER CANDIDATE NUMBER: "))
+                                        ncand = input("\n\t\t\t ENTER CANDIDATE NUMBER: ")
                                         if ncand.isdigit():
                                             ncand = int(ncand)
                                             if (ncand in alist) and ncand != spos:
                                                 clears()
                                                 candidate()
                                                 matches()
-                                                match = str(input("\t\t\t ENTER OPTION: "))
+                                                match = input("\t\t\t ENTER OPTION: ")
                                                 if match == "1":
                                                     likes[spos][ncand] = 1
                                                 elif match == "0":
@@ -1612,16 +1610,16 @@ while opt != "2" and failat != 3:
                                     clears()
                                     SHOWCANDIDATES(students,SRT,3,SCT)
                                     matching()
-                                    s_opt212 = str(input("\n\t\t\t ENTER OPTION: "))
+                                    s_opt212 = input("\n\t\t\t ENTER OPTION: ")
                             elif s_opt21 == "b":
                                 clears()
                                 reportsome()
-                                s_opt214 = str(input("\n\t\t\t ENTER OPTION: "))
+                                s_opt214 = input("\n\t\t\t ENTER OPTION: ")
                                 while s_opt214 != "2":
                                     if s_opt214 == "1":
                                         clears()
                                         SHOWCANDIDATES(students,SRT,3,SCT)
-                                        rcand = str(input("\n\t\t WHO DO YOU WANT TO REPORT, CHOOSE NUMBER OR NAME: "))
+                                        rcand = input("\n\t\t WHO DO YOU WANT TO REPORT, CHOOSE NUMBER OR NAME: ")
                                         rname = namesearch (students, SRT, rcand)
                                         if rcand.isdigit():
                                             rcand = int(rcand)
@@ -1651,7 +1649,7 @@ while opt != "2" and failat != 3:
                                         clears()
                                     clears()
                                     reportsome()
-                                    s_opt214 = str(input("\n\t\t\t ENTER OPTION: "))
+                                    s_opt214 = input("\n\t\t\t ENTER OPTION: ")
                             elif s_opt21 != "a" and s_opt21 != "b" and s_opt21 != "c":
                                 clears ()
                                 submenu2 ()
@@ -1659,17 +1657,17 @@ while opt != "2" and failat != 3:
                                 time.sleep (2)
                             clears ()
                             submenu2 ()
-                            s_opt21 = str(input("\t\t\tSUBSELECT AN OPTION FROM MENU 2: "))
+                            s_opt21 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 2: ")
                             s_opt21 = s_opt21.lower()
                     elif s_opt == "3":
                         clears ()
                         submenu3 ()
-                        s_opt32 = str(input("\t\t\tSUBSELECT AN OPTION FROM MENU 3: "))
+                        s_opt32 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 3: ")
                         while s_opt32 != "d":
                             if s_opt32 == "a":
                                 clears ()
                                 submenu3a ()
-                                s_opt324 = str(input("\t\t\t\t   ENTER OPTION: "))
+                                s_opt324 = input("\t\t\t\t   ENTER OPTION: ")
                                 while s_opt324 != "0":
                                     if s_opt324 == "1":
                                         clears()
@@ -1694,7 +1692,7 @@ while opt != "2" and failat != 3:
                                         time.sleep (2)
                                     clears ()
                                     submenu3a ()
-                                    s_opt324 = str(input("\t\t\t\t   ENTER OPTION: "))
+                                    s_opt324 = input("\t\t\t\t   ENTER OPTION: ")
                             elif s_opt32 == "b":
                                 clears ()
                                 submenu3 ()
@@ -1710,7 +1708,7 @@ while opt != "2" and failat != 3:
                                 time.sleep (2)
                             clears ()
                             submenu3 ()
-                            s_opt32 = str(input("\t\t\tSUBSELECT AN OPTION FROM MENU 3: "))
+                            s_opt32 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 3: ")
                     elif s_opt == "4":
                                 clears ()
                                 initialscreen()
@@ -1729,7 +1727,7 @@ while opt != "2" and failat != 3:
                     else:
                         clears()
                         initialscreen()
-                        s_opt = str(input("\t\t\t\t ENTER THE OPTION: "))
+                        s_opt = input("\t\t\t\t ENTER THE OPTION: ")
             elif mpos != -1:
                 clearnscreen()
                 accessgranted()
@@ -1738,7 +1736,7 @@ while opt != "2" and failat != 3:
                 time.sleep(2)
                 clears()
                 minitialscreen()
-                s_opt99 = str(input("\t\t\t\t ENTER THE OPTION: "))
+                s_opt99 = input("\t\t\t\t ENTER THE OPTION: ")
                 if s_opt99 == "0":
                     exit = False
                     clears()
@@ -1746,21 +1744,21 @@ while opt != "2" and failat != 3:
                     if s_opt99 == "1":
                         clears ()
                         msubmenu1 ()
-                        s_opt88 = str(input("\t\t\t\t ENTER THE OPTION: "))
+                        s_opt88 = input("\t\t\t\t ENTER THE OPTION: ")
                         s_opt88 = s_opt88.lower()
                         while s_opt88 != "b":
                             if s_opt88 == "a":
                                 clears()
                                 SHOWCANDIDATES(students,SRT,3,SCT)
                                 mdelprofile()
-                                s_opt888 = str(input("\n\t\t\t ENTER OPTION: "))
+                                s_opt888 = input("\n\t\t\t ENTER OPTION: ")
                                 while s_opt888 != "2":
                                     if s_opt888 == "1":
                                         clears()
                                         SHOWCANDIDATES(students,SRT,3,SCT)
                                         enternon()
                                         alist = acandidate (students, SRT, SCT)
-                                        rcand = str(input("\n\t\t WHO DO YOU WANT TO ERASE, CHOOSE NUMBER OR NAME: "))
+                                        rcand = input("\n\t\t WHO DO YOU WANT TO ERASE, CHOOSE NUMBER OR NAME: ")
                                         rname = namesearch (students, SRT, rcand)
                                         if rcand.isdigit():
                                             rcand = int(rcand)
@@ -1780,7 +1778,7 @@ while opt != "2" and failat != 3:
                                     clears()
                                     SHOWCANDIDATES(students,SRT,3,SCT)
                                     mdelprofile()
-                                    s_opt888 = str(input("\n\t\t\t ENTER OPTION: "))
+                                    s_opt888 = input("\n\t\t\t ENTER OPTION: ")
                             elif s_opt88 != "a" and s_opt88 != "b":
                                 clears()
                                 msubmenu1()
@@ -1788,11 +1786,11 @@ while opt != "2" and failat != 3:
                                 time.sleep(2)
                             clears ()
                             msubmenu1 ()
-                            s_opt88 = str(input("\t\t\t\t ENTER THE OPTION: "))
+                            s_opt88 = input("\t\t\t\t ENTER THE OPTION: ")
                     elif s_opt99 == "2":
                         clears ()
                         msubmenu2 ()
-                        s_opt77 = str(input("\t\t\t\t ENTER THE OPTION: "))
+                        s_opt77 = input("\t\t\t\t ENTER THE OPTION: ")
                         s_opt77 = s_opt77.lower()
                         while s_opt77 != "c":
                             if s_opt77 == "a":
@@ -1800,7 +1798,7 @@ while opt != "2" and failat != 3:
                                 showrlist(reports, RRT)
                                 rl = lreports (reports, RRT, RCT)
                                 updatereports()
-                                uopt = str(input("\t\t\t ENTER OPTION NUMBER:"))
+                                uopt = input("\t\t\t ENTER OPTION NUMBER:")
                                 if uopt == "1" and len(rl) == 0:
                                     nothing()
                                     time.sleep(2)
@@ -1810,14 +1808,14 @@ while opt != "2" and failat != 3:
                                         clears()
                                         showrlist(reports, RRT)
                                         rl = lreports (reports, RRT, RCT)
-                                        ropt = str(input("\t\t\t\t\t\t ENTER THE REPORT NUMBER YOU WANT TO UPDATE:"))
+                                        ropt = input("\t\t\t\t\t\t ENTER THE REPORT NUMBER YOU WANT TO UPDATE:")
                                         if ropt.isdigit():
                                             ropt = int (ropt)
                                             if ropt in rl:
                                                 clears()
                                                 showrlist(reports, RRT)
                                                 updatereports1()
-                                                aopt = str(input("\t\t\t ENTER THE ACTION NUMBER:"))
+                                                aopt = input("\t\t\t ENTER THE ACTION NUMBER:")
                                                 if aopt ==  "1":
                                                     changendeac(reports, ropt, RCT, students, SCT)
                                                 elif aopt == "2":
@@ -1826,7 +1824,7 @@ while opt != "2" and failat != 3:
                                     clears()
                                     showrlist(reports, RRT)
                                     updatereports()
-                                    uopt = str(input("\t\t\t ENTER OPTION NUMBER:"))
+                                    uopt = input("\t\t\t ENTER OPTION NUMBER:")
                                     if uopt == "1" and len(rl) == 0:
                                         nothing()
                                         time.sleep(2)
@@ -1841,7 +1839,7 @@ while opt != "2" and failat != 3:
                                 time.sleep(2)
                             clears ()
                             msubmenu2 ()
-                            s_opt77 = str(input("\t\t\t\t ENTER THE OPTION: "))
+                            s_opt77 = input("\t\t\t\t ENTER THE OPTION: ")
                     elif s_opt99 != "1" and s_opt99 != "2" and s_opt99 != "3" and s_opt99 != "0":
                             clears()
                             minitialscreen()
@@ -1853,7 +1851,7 @@ while opt != "2" and failat != 3:
                     else:
                         clears()
                         minitialscreen()
-                        s_opt99 = str(input("\t\t\t\t ENTER THE OPTION: "))
+                        s_opt99 = input("\t\t\t\t ENTER THE OPTION: ")
             elif email == 0 and epasw == 0:
                 clears()
             else:
@@ -1874,7 +1872,7 @@ while opt != "2" and failat != 3:
         time.sleep (2)
     elif opt == "3":
         clearnscreen()
-        email = str(input("\t\t\tENTER USERNAME: "))
+        email = input("\t\t\tENTER USERNAME: ")
         clearnscreen()
         epasw = getpass.getpass(prompt = "\t\t\tENTER PASSWORD:***********", stream=None)
         clears()
@@ -1906,5 +1904,5 @@ while opt != "2" and failat != 3:
     else:
         logo()
         mainmenu()
-        opt = str(input("\t\t\t\t   ENTER OPTION: "))
+        opt = input("\t\t\t\t   ENTER OPTION: ")
         clears()
