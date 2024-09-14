@@ -286,14 +286,14 @@ def submenu3a ():
             ''')
 
 
-def invaliddate ():
+def invaliddate (case):
     print ('''\n
            ████████████████████████████████████████████████████████████████
            ██                                                            ██
-           ██                    THE DATE IS INVALID                     ██
+           ██                    THE {} IS INVALID                       ██
            ██                                                            ██
            ████████████████████████████████████████████████████████████████\n
-            ''')
+            '''.format(case))
     
 def validdate ():
     print ('''\n
@@ -1413,64 +1413,76 @@ def changendeac(X, filas, Xcolumnas, A, Acolumnas):
 def ignorereport(X, filas, columnas):
     X[filas][columnas-1] = "2"
 
-
-
-#-------------------------------PROGRAMA--------------------------------------#
-CYEAR = int(currentdate.year)
-CYEARF = CYEAR - 18
-CYEARI = CYEAR - 60
-LOADLIKES(likes, LRT, LCT)
-SLOADBASICINFO(students, SRT ,SCT)
-MLOADBASICINFO(moderator,MRT, MCT)
-RLOADBASICINFO(reports, RRT, RCT)
-
-
-students[0][1] = "1"
-students[0][2] = "1"
-
-moderator[0][1] = "2"
-moderator[0][2] = "2"
-
-failat = 0
-clears()
-logo()
-mainmenu()
-opt = input("\t\t\t\t   ENTER OPTION: ")
-clears()
-while opt != "2" and failat != 3:
-    exit = True
-    if opt == "1":
-        while exit and failat != 3:
-            clearnscreen()
-            email = input("\t\t\tENTER USERNAME: ")
-            clearnscreen()
-            epasw = getpass.getpass(prompt = "\t\t\tENTER PASSWORD:***********", stream=None)
-            clears()
-            spos = suservalidator(students, email, epasw, SRT, SCT)
-            mpos = muservalidator(moderator, email, epasw, MRT, MCT)
-            if spos != -1:
-                email = 0
-                epasw = 0
-                failat = 0
-                clearnscreen()
-                accessgranted()
+def userMainMenu():
+    initialscreen()
+    optUserMaM = input("\t\t\t\t ENTER THE OPTION: ")
+    if optUserMaM == "0":
+        exit = False
+        clears()
+        while optUserMaM != "0":
+            if optUserMaM == "1":
+                userMenuManP()
+            elif optUserMaM == "2":
+                userMenuManC()
+            elif optUserMaM == "3":
+                userMenuMatch()
+            elif optUserMaM == "4":
+                clears ()
+                initialscreen()
+                underconstruction ()
+                time.sleep (2)
+            elif optUserMaM == "5":
+                roulette()
+            elif optUserMaM != "0" and optUserMaM != "1" and optUserMaM != "2" and optUserMaM != "3" and optUserMaM != "4" and optUserMaM != "5":
+                clears ()
+                initialscreen()
+                invalidoption()
+                time.sleep (2)
+            if optUserMaM == "0":
+                exit = False
                 clears()
-                greetings()
-                time.sleep(2)
+            else:
                 clears()
                 initialscreen()
-                s_opt = input("\t\t\t\t ENTER THE OPTION: ")
-                if s_opt == "0":
-                    exit = False
-                    clears()
-                while s_opt != "0":
-                    if s_opt == "1":
+                optUserMaM = input("\t\t\t\t ENTER THE OPTION: ")
+
+def userMenuManP():
                         clears ()
                         submenu1 ()
-                        s_opt1 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 1: ")
-                        s_opt1 = s_opt1.lower()
-                        while s_opt1 != "c":
-                            if s_opt1 == "a":
+                        optUserManP = input("\t\t\tSUBSELECT AN OPTION FROM MENU 1: ")
+                        optUserManP = optUserManP.lower()
+                        while optUserManP != "c":
+                            if optUserManP == "a":
+                                userEditData()
+                            elif optUserManP == "b":
+                                clears ()
+                                delprofile()
+                                s_optb = input("\t\t\tSELECT AN OPTION FROM MENU: ")
+                                if s_optb == "1":
+                                    deadprofile(students, spos, SCT, reports, RRT)
+                                    exit = False
+                                    optUserManP = "c"
+                                    optUserMaM = "0"
+                                    clears()
+                                elif s_optb == "2":
+                                    clears()
+                                else:
+                                    invalidoption()
+                                    time.sleep(2)
+                            elif optUserManP != "a" and optUserManP != "b" and optUserManP != "c":
+                                clears ()
+                                submenu1 ()
+                                invalidoption()
+                                time.sleep (2)
+                            if optUserManP == "c":
+                                clears()
+                            else:
+                                clears ()
+                                submenu1 ()
+                                optUserManP = input("\t\t\tSUBSELECT AN OPTION FROM MENU 1: ")
+                                optUserManP = optUserManP.lower()
+
+def userEditData():
                                 clears ()
                                 submenu1a ()
                                 s_opt11 = input("\t\t\tSELECT AN OPTION TO ADD INFORMATION: ")
@@ -1546,34 +1558,8 @@ while opt != "2" and failat != 3:
                                     clears ()
                                     submenu1a ()
                                     s_opt11 = input("\t\t\tSELECT AN OPTION TO ADD INFORMATION: ")
-                            elif s_opt1 == "b":
-                                clears ()
-                                delprofile()
-                                s_optb = input("\t\t\tSELECT AN OPTION FROM MENU: ")
-                                if s_optb == "1":
-                                    deadprofile(students, spos, SCT, reports, RRT)
-                                    exit = False
-                                    s_opt1 = "c"
-                                    s_opt = "0"
-                                    clears()
-                                elif s_optb == "2":
-                                    clears()
-                                else:
-                                    invalidoption()
-                                    time.sleep(2)
-                            elif s_opt1 != "a" and s_opt1 != "b" and s_opt1 != "c":
-                                clears ()
-                                submenu1 ()
-                                invalidoption()
-                                time.sleep (2)
-                            if s_opt1 == "c":
-                                clears()
-                            else:
-                                clears ()
-                                submenu1 ()
-                                s_opt1 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 1: ")
-                                s_opt1 = s_opt1.lower()
-                    elif s_opt == "2":
+
+def userMenuManC():
                         clears ()
                         submenu2 ()
                         s_opt21 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 2: ")
@@ -1659,7 +1645,8 @@ while opt != "2" and failat != 3:
                             submenu2 ()
                             s_opt21 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 2: ")
                             s_opt21 = s_opt21.lower()
-                    elif s_opt == "3":
+
+def userMenuMatch():
                         clears ()
                         submenu3 ()
                         s_opt32 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 3: ")
@@ -1709,25 +1696,51 @@ while opt != "2" and failat != 3:
                             clears ()
                             submenu3 ()
                             s_opt32 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 3: ")
-                    elif s_opt == "4":
-                                clears ()
-                                initialscreen()
-                                underconstruction ()
-                                time.sleep (2)
-                    elif s_opt == "5":
-                        roulette()
-                    elif s_opt != "0" and s_opt != "1" and s_opt != "2" and s_opt != "3" and s_opt != "4" and s_opt != "5":
-                                clears ()
-                                initialscreen()
-                                invalidoption()
-                                time.sleep (2)
-                    if s_opt == "0":
-                        exit = False
-                        clears()
-                    else:
-                        clears()
-                        initialscreen()
-                        s_opt = input("\t\t\t\t ENTER THE OPTION: ")
+
+#-------------------------------PROGRAMA--------------------------------------#
+CYEAR = int(currentdate.year)
+CYEARF = CYEAR - 18
+CYEARI = CYEAR - 60
+LOADLIKES(likes, LRT, LCT)
+SLOADBASICINFO(students, SRT ,SCT)
+MLOADBASICINFO(moderator,MRT, MCT)
+RLOADBASICINFO(reports, RRT, RCT)
+
+
+students[0][1] = "1"
+students[0][2] = "1"
+
+moderator[0][1] = "2"
+moderator[0][2] = "2"
+
+failat = 0
+clears()
+logo()
+mainmenu()
+opt = input("\t\t\t\t   ENTER OPTION: ")
+clears()
+while opt != "2" and failat != 3:
+    exit = True
+    if opt == "1":
+        while exit and failat != 3:
+            clearnscreen()
+            email = input("\t\t\tENTER USERNAME: ")
+            clearnscreen()
+            epasw = getpass.getpass(prompt = "\t\t\tENTER PASSWORD:***********", stream=None)
+            clears()
+            spos = suservalidator(students, email, epasw, SRT, SCT)
+            mpos = muservalidator(moderator, email, epasw, MRT, MCT)
+            if spos != -1:
+                email = 0
+                epasw = 0
+                failat = 0
+                clearnscreen()
+                accessgranted()
+                clears()
+                greetings()
+                time.sleep(2)
+                clears()
+                userMainMenu()
             elif mpos != -1:
                 clearnscreen()
                 accessgranted()
