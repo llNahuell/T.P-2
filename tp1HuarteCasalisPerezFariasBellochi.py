@@ -853,8 +853,7 @@ RRT = 10
 RCT = 7
 reports = [ [""]*RCT for i in range(RRT) ]
 
-
-#-----------------------------------MODULOS-----------------------------------#
+#-----------------------------------MODULOS DATOS-----------------------------------#
 
 def greetings():
         swelcome()
@@ -874,7 +873,6 @@ def biovalidator(BIO):
 def displayhob():
     print (f" {students[spos][8]}")
 
-
 def hobvalidator(HOB):
     if len(HOB) <255:
         return HOB
@@ -882,9 +880,7 @@ def hobvalidator(HOB):
         return -1
 
 def seednumber():
-
     global currentdate, seedn
-
     cyear = currentdate.year
     cmonth = currentdate.month
     cday = currentdate.day
@@ -958,10 +954,7 @@ def bonus2():
     print("la cantidad de matcheos posibles es", cant_matcheos)
     time.sleep(2)
 
-
-
 def validate_date(D, M, Y):
-
     if D.isdigit() and M.isdigit() and Y.isdigit():
         dd = int(D)
         mm = int(M)
@@ -985,14 +978,12 @@ def validate_date(D, M, Y):
     return -1
 
 def age(DOB):
-
     age = datetime.now().date() - DOB
     age = math.floor(age.days / DPY)
     age = str(age)
     return age
 
 def rdob():
-
     rdd = str(random.randint(1,28))
     rmm = str(random.randint(1,12))
     ryear = str(random.randint(CYEARI,CYEARF))
@@ -1048,7 +1039,6 @@ def LOADLIKES (A, filas, columnas):
                 A[i][j] = "0"
 
 def SLOADBASICINFO(A,filas, columna):
-
     global ASTA, ISTA, NAME1, NAME2, NAME3, NAME4, BIO1, BIO2, BIO3, BIO4, HOB1, HOB2, HOB3, HOB4
     for i in range (filas):
         for j in range (columna):
@@ -1100,7 +1090,6 @@ def MLOADBASICINFO(A,filas, columna):
 
 def RLOADBASICINFO(A,filas, columna):
     global ASTA, ISTA, NAME1, NAME2, NAME3, NAME4, REASON3, REASON4
-
     for i in range (filas):
         for j in range (columna):
             if  0 <= i <=1:
@@ -1377,7 +1366,6 @@ def deadprofile(A, afila, aposicion, X, xfila):
         elif X[i][k] == str(afila):
             X[i][k+1] == ISTA
 
-
 def showrlist(A, filas):
     i = 0
     j = 0
@@ -1413,153 +1401,165 @@ def changendeac(X, filas, Xcolumnas, A, Acolumnas):
 def ignorereport(X, filas, columnas):
     X[filas][columnas-1] = "2"
 
+#-----------------------------------MODULOS PROGRAMA-----------------------------------#
+
 def userMainMenu():
     initialscreen()
     optUserMaM = input("\t\t\t\t ENTER THE OPTION: ")
-    if optUserMaM == "0":
-        exit = False
-        clears()
-        while optUserMaM != "0":
-            if optUserMaM == "1":
-                userMenuManP()
-            elif optUserMaM == "2":
-                userMenuManC()
-            elif optUserMaM == "3":
-                userMenuMatch()
-            elif optUserMaM == "4":
-                clears ()
-                initialscreen()
-                underconstruction ()
-                time.sleep (2)
-            elif optUserMaM == "5":
-                roulette()
-            elif optUserMaM != "0" and optUserMaM != "1" and optUserMaM != "2" and optUserMaM != "3" and optUserMaM != "4" and optUserMaM != "5":
-                clears ()
-                initialscreen()
-                invalidoption()
-                time.sleep (2)
-            if optUserMaM == "0":
-                exit = False
-                clears()
-            else:
-                clears()
-                initialscreen()
-                optUserMaM = input("\t\t\t\t ENTER THE OPTION: ")
+    clears()
+    while optUserMaM != "0":
+        if optUserMaM == "1":
+            userMenuManP()
+        elif optUserMaM == "2":
+            userMenuManC()
+        elif optUserMaM == "3":
+            userMenuMatch()
+        elif optUserMaM == "4":
+            clears ()
+            initialscreen()
+            underconstruction ()
+            time.sleep (2)
+        elif optUserMaM == "5":
+            roulette()
+        elif optUserMaM != "0" and optUserMaM != "1" and optUserMaM != "2" and optUserMaM != "3" and optUserMaM != "4" and optUserMaM != "5":
+            clears ()
+            initialscreen()
+            invalidoption()
+            time.sleep (2)
+        if optUserMaM == "0":
+            clears()
+        else:
+            clears()
+            initialscreen()
+            optUserMaM = input("\t\t\t\t ENTER THE OPTION: ")
 
 def userMenuManP():
-                        clears ()
-                        submenu1 ()
-                        optUserManP = input("\t\t\tSUBSELECT AN OPTION FROM MENU 1: ")
-                        optUserManP = optUserManP.lower()
-                        while optUserManP != "c":
-                            if optUserManP == "a":
-                                userEditData()
-                            elif optUserManP == "b":
-                                clears ()
-                                delprofile()
-                                s_optb = input("\t\t\tSELECT AN OPTION FROM MENU: ")
-                                if s_optb == "1":
-                                    deadprofile(students, spos, SCT, reports, RRT)
-                                    exit = False
-                                    optUserManP = "c"
-                                    optUserMaM = "0"
-                                    clears()
-                                elif s_optb == "2":
-                                    clears()
-                                else:
-                                    invalidoption()
-                                    time.sleep(2)
-                            elif optUserManP != "a" and optUserManP != "b" and optUserManP != "c":
-                                clears ()
-                                submenu1 ()
-                                invalidoption()
-                                time.sleep (2)
-                            if optUserManP == "c":
-                                clears()
-                            else:
-                                clears ()
-                                submenu1 ()
-                                optUserManP = input("\t\t\tSUBSELECT AN OPTION FROM MENU 1: ")
-                                optUserManP = optUserManP.lower()
+    clears ()
+    submenu1 ()
+    optUserManP = input("\t\t\tSUBSELECT AN OPTION FROM MENU 1: ")
+    optUserManP = optUserManP.lower()
+    while optUserManP != "c":
+        if optUserManP == "a":
+            userMenuEditData()
+        elif optUserManP == "b":
+            userDeleteProf()
+        elif optUserManP != "a" and optUserManP != "b" and optUserManP != "c":
+            clears ()
+            submenu1 ()
+            invalidoption()
+            time.sleep (2)
+        elif optUserManP == "c":
+            clears()
+        clears ()
+        submenu1 ()
+        optUserManP = input("\t\t\tSUBSELECT AN OPTION FROM MENU 1: ")
+        optUserManP = optUserManP.lower()
 
-def userEditData():
-                                clears ()
-                                submenu1a ()
-                                s_opt11 = input("\t\t\tSELECT AN OPTION TO ADD INFORMATION: ")
-                                while s_opt11 != "4":
-                                    if s_opt11 == "1":
-                                        clears ()
-                                        currentdate1()
-                                        changedate()
-                                        s_opt12 = input("\t\t\t ENTER THE OPTION:  ")
-                                        while s_opt12 != "2":
-                                            if s_opt12 == "1":
-                                                ndd = days()
-                                                nmm = months()
-                                                nyear = years()
-                                                ndob = validate_date(ndd, nmm, nyear)
-                                                if ndob != -1:
-                                                    students[spos][4] = str(ndob)
-                                                    students[spos][5] = age(ndob)
-                                                else:
-                                                    invaliddate()
-                                                    time.sleep(2)
-                                            elif s_opt12 != "1" and s_opt12 != "2":
-                                                clears()
-                                                invalidoption()
-                                                time.sleep(2)
-                                            clears ()
-                                            currentdate1()
-                                            changedate()
-                                            s_opt12 = input("\t\t\t ENTER THE OPTION:  ")
-                                    elif s_opt11 == "2":
-                                        clears()
-                                        currentbio()
-                                        displaybio()
-                                        changebio()
-                                        s_opt21 = input("\t\t\t ENTER THE OPTION: ")
-                                        while s_opt21 != "2":
-                                            if s_opt21 == "1":
-                                                clears()
-                                                nbio = enterbio()
-                                                students[spos][7] = nbio
-                                            elif s_opt21 != "1" and s_opt21 !="2":
-                                                invalidoption()
-                                                time.sleep (2)
-                                            clears()
-                                            currentbio()
-                                            displaybio()
-                                            changebio()
-                                            s_opt21 = input("\t\t\t ENTER THE OPTION: ")
-                                    elif s_opt11 == "3":
-                                        clears()
-                                        currenthob()
-                                        displayhob()
-                                        changehob()
-                                        s_opt3 = input("\t\t\t ENTER THE OPTION:  ")
-                                        while s_opt3 != "2":
-                                            if s_opt3 == "1":
-                                                clears()
-                                                enterhobies()
-                                                nhob = input("\t\t\t WRITE YOUR HOBBIES: ")
-                                                nhob = hobvalidator(nhob)
-                                                if nhob != -1:
-                                                    students[spos][8] = nhob
-                                                else:
-                                                    longbio()
-                                            elif s_opt3 != "2" and s_opt3 != "1":
-                                                invalidoption()
-                                                time.sleep (2)
-                                            clears()
-                                            currenthob()
-                                            displayhob()
-                                            changehob()
-                                            s_opt3 = input("\t\t\t ENTER THE OPTION:  ")
-                                    clears ()
-                                    submenu1a ()
-                                    s_opt11 = input("\t\t\tSELECT AN OPTION TO ADD INFORMATION: ")
+def userMenuEditData():
+    clears ()
+    submenu1a ()
+    optUserEdiD = input("\t\t\tSELECT AN OPTION TO ADD INFORMATION: ")
+    while optUserEdiD != "4":
+        if optUserEdiD == "1":
+            userEditDate()
+        elif optUserEdiD == "2":
+            userEditBio()
+        elif optUserEdiD == "3":
+            userEditHobbie()
+        elif optUserEdiD == "4":
+            clears ()
+        clears ()
+        submenu1a ()
+        optUserEdiD = input("\t\t\tSELECT AN OPTION TO ADD INFORMATION: ")
+
+def userEditDate():
+    clears ()
+    currentdate1()
+    changedate()
+    optChDate = input("\t\t\t ENTER THE OPTION:  ")
+    while optChDate != "2":
+        if optChDate == "1":
+            day = days()
+            month = months()
+            year = years()
+            userDateBirth = validate_date(day, month, year)
+            if userDateBirth != -1:
+                students[spos][4] = str(userDateBirth)
+                students[spos][5] = age(userDateBirth)
+            else:
+                invaliddate()
+                time.sleep(2)
+        elif optChDate != "1" and optChDate != "2":
+            clears()
+            invalidoption()
+            time.sleep(2)
+        elif optChDate == "2":
+            clears()
+        clears ()
+        currentdate1()
+        changedate()
+        optChDate = input("\t\t\t ENTER THE OPTION:  ")
+
+def userEditBio():
+    clears()
+    currentbio()
+    displaybio()
+    changebio()
+    s_opt21 = input("\t\t\t ENTER THE OPTION: ")
+    while s_opt21 != "2":
+        if s_opt21 == "1":
+            clears()
+            nbio = enterbio()
+            students[spos][7] = nbio
+        elif s_opt21 != "1" and s_opt21 !="2":
+            invalidoption()
+            time.sleep (2)
+            clears()
+            currentbio()
+            displaybio()
+            changebio()
+            s_opt21 = input("\t\t\t ENTER THE OPTION: ")
+
+def userEditHobbie():
+    clears()
+    currenthob()
+    displayhob()
+    changehob()
+    s_opt3 = input("\t\t\t ENTER THE OPTION:  ")
+    while s_opt3 != "2":
+        if s_opt3 == "1":
+            clears()
+            enterhobies()
+            nhob = input("\t\t\t WRITE YOUR HOBBIES: ")
+            nhob = hobvalidator(nhob)
+            if nhob != -1:
+                students[spos][8] = nhob
+            else:
+                longbio()
+        elif s_opt3 != "2" and s_opt3 != "1":
+            invalidoption()
+            time.sleep (2)
+        clears()
+        currenthob()
+        displayhob()
+        changehob()
+        s_opt3 = input("\t\t\t ENTER THE OPTION:  ")
+
+def userDeleteProf():
+    clears ()
+    delprofile()
+    s_optb = input("\t\t\tSELECT AN OPTION FROM MENU: ")
+    if s_optb == "1":
+        deadprofile(students, spos, SCT, reports, RRT)
+        clears()
+    elif s_optb == "2":
+        clears()
+    else:
+        invalidoption()
+        time.sleep(2)
 
 def userMenuManC():
+                        global ncand
                         clears ()
                         submenu2 ()
                         s_opt21 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 2: ")
@@ -1647,6 +1647,7 @@ def userMenuManC():
                             s_opt21 = s_opt21.lower()
 
 def userMenuMatch():
+                        global sper,lgiven,lreceived
                         clears ()
                         submenu3 ()
                         s_opt32 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 3: ")
