@@ -6,12 +6,7 @@ from math import factorial
 from datetime import datetime
 import random
 
-
-
 #----------------------------------------GMENU-------------------------------------#
-
-
-    
 def logo ():
     print ('''
        \n
@@ -99,43 +94,13 @@ def mwelcome ():
             ████████████████████████████████████████████████████████████████
             '''.format(moderator[mpos][3]))
 
-def minitialscreen ():
-    print ('''
-           ████████████████████████████████████████████████████████████████
-           ██                                                            ██
-           ██    1. MANAGE USERS                                         ██
-           ██                                                            ██
-           ██    2. MANAGE REPORTS                                       ██
-           ██                                                            ██
-           ██    3. STADISTIC REPORTS                                    ██
-           ██                                                            ██
-           ██    0. EXIT                                                 ██
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████
-        ''')
-
-def msubmenu1 ():
+def modMen ():
     print ('''
            ████████████████████████████████████████████████████████████████
            ██                                                            ██
            ██    1. MANAGE USERS                                         ██
            ██        a.DEACTIVATE USER                                   ██
            ██        b.RETURN                                            ██
-           ██                                                            ██
-           ██    2. MANAGE REPORTS                                       ██
-           ██                                                            ██
-           ██    3. STADISTIC REPORTS                                    ██
-           ██                                                            ██
-           ██    0. EXIT                                                 ██
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████
-        ''')
-
-def msubmenu2 ():
-    print ('''
-           ████████████████████████████████████████████████████████████████
-           ██                                                            ██
-           ██    1. MANAGE USERS                                         ██
            ██                                                            ██
            ██    2. MANAGE REPORTS                                       ██
            ██        a.CHECK REPORTS                                     ██
@@ -149,27 +114,7 @@ def msubmenu2 ():
            ████████████████████████████████████████████████████████████████
         ''')
 
-
-def initialscreen ():
-    print ('''
-           ████████████████████████████████████████████████████████████████    
-           ██                                                            ██
-           ██    1. MANAGE PROFILE                                       ██
-           ██                                                            ██
-           ██    2. MANAGE CANDIDATES                                    ██
-           ██                                                            ██
-           ██    3. MATCHING                                             ██
-           ██                                                            ██
-           ██    4. STADISTIC REPORTS                                    ██
-           ██                                                            ██
-           ██    5. ROULETTE                                             ██
-           ██                                                            ██
-           ██    0. EXIT                                                 ██
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████
-        ''')
-    
-def submenu1 ():
+def userMen ():
     print ('''
            ████████████████████████████████████████████████████████████████    
            ██                                                            ██
@@ -179,48 +124,9 @@ def submenu1 ():
            ██        c.RETURN                                            ██
            ██                                                            ██
            ██    2. MANAGE CANDIDATES                                    ██
-           ██                                                            ██
-           ██    3. MATCHING                                             ██
-           ██                                                            ██
-           ██    4. STADISTIC REPORTS                                    ██
-           ██                                                            ██
-           ██    5. ROULETTE                                             ██
-           ██                                                            ██
-           ██    0. EXIT                                                 ██
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████
-
-        ''')
-
-def submenu2 ():    
-    print ('''
-           ████████████████████████████████████████████████████████████████    
-           ██                                                            ██
-           ██    1. MANAGE PROFILE                                       ██
-           ██                                                            ██
-           ██    2. MANAGE CANDIDATES                                    ██
            ██        a.CHECK CANDIDATES                                  ██
            ██        b.REPORT CANDIDATES                                 ██
            ██        c.RETURN                                            ██
-           ██                                                            ██
-           ██    3. MATCHING                                             ██
-           ██                                                            ██
-           ██    4. STADISTIC REPORTS                                    ██
-           ██                                                            ██
-           ██    5. ROULETTE                                             ██
-           ██                                                            ██
-           ██    0. EXIT                                                 ██
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████
-        ''')
-    
-def submenu3 ():
-        print ('''
-           ████████████████████████████████████████████████████████████████    
-           ██                                                            ██
-           ██    1. MANAGE PROFILE                                       ██
-           ██                                                            ██
-           ██    2. MANAGE CANDIDATES                                    ██
            ██                                                            ██
            ██    3. MATCHING                                             ██
            ██        a.CHECK MATCHES                                     ██
@@ -245,7 +151,7 @@ def invalidoption ():
            ██                                                            ██
            ████████████████████████████████████████████████████████████████
             ''')
-    
+
 def underconstruction ():
     print ('''
            ████████████████████████████████████████████████████████████████
@@ -254,8 +160,8 @@ def underconstruction ():
            ██                                                            ██
            ████████████████████████████████████████████████████████████████
             ''')
-    
-def submenu1a ():
+
+def ChDataMen ():
     print ('''
            ████████████████████████████████████████████████████████████████    
            ██                                                            ██
@@ -270,7 +176,7 @@ def submenu1a ():
            ████████████████████████████████████████████████████████████████
             ''')
 
-def submenu3a ():
+def matchSubMen ():
     print ('''
            ████████████████████████████████████████████████████████████████
            ██                                                            ██
@@ -285,63 +191,27 @@ def submenu3a ():
            ████████████████████████████████████████████████████████████████
             ''')
 
-
-def invaliddate (case):
+def valScreen (case,valid):
     print ('''\n
            ████████████████████████████████████████████████████████████████
            ██                                                            ██
-           ██                    THE {} IS INVALID                       ██
+           ██                    THE {} IS {}                            ██
+           ██                                                            ██
+           ████████████████████████████████████████████████████████████████\n
+            '''.format(case, valid))
+
+def changeData(case):
+    print ('''\n
+           ████████████████████████████████████████████████████████████████
+           ██                                                            ██
+           ██             WOULD YOU LIKE TO UPDATE THE {}?               ██
+           ██                                                            ██
+           ██                          1.YES                             ██
+           ██                                                            ██  
+           ██                          2.NO                              ██             
            ██                                                            ██
            ████████████████████████████████████████████████████████████████\n
             '''.format(case))
-    
-def validdate ():
-    print ('''\n
-           ████████████████████████████████████████████████████████████████
-           ██                                                            ██
-           ██                     THE DATE IS VALID                      ██
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████\n
-            ''')
-    
-def changedate():
-    print ('''\n
-           ████████████████████████████████████████████████████████████████
-           ██                                                            ██
-           ██             WOULD YOU LIKE TO UPDATE THE DATE?             ██
-           ██                                                            ██
-           ██                          1.YES                             ██
-           ██                                                            ██  
-           ██                          2.NO                              ██             
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████\n
-            ''')
-
-def changebio():
-    print ('''\n
-           ████████████████████████████████████████████████████████████████
-           ██                                                            ██
-           ██           WOULD YOU LIKE TO UPDATE THE BIOGRAPHY?          ██
-           ██                                                            ██
-           ██                          1.YES                             ██
-           ██                                                            ██  
-           ██                          2.NO                              ██             
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████\n
-            ''')
-
-def changehob():
-    print ('''\n
-           ████████████████████████████████████████████████████████████████
-           ██                                                            ██
-           ██            WOULD YOU LIKE TO UPDATE THE HOBBIES?           ██
-           ██                                                            ██
-           ██                          1.YES                             ██
-           ██                                                            ██  
-           ██                          2.NO                              ██             
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████\n
-            ''')          
 
 def currentdate1():
     print ('''\n
@@ -380,68 +250,32 @@ def enteryear():
            ████████████████████████████████████████████████████████████████\n
             ''')
 
-def enterbiog():
+def enterData(case):
     print ('''\n
            ████████████████████████████████████████████████████████████████
            ██                                                            ██
-           ██      ENTER YOUR BIOGRAPHY - NO MORE THAN 255 CHARACTER     ██   
+           ██      ENTER YOUR {} - NO MORE THAN 255 CHARACTER            ██   
            ██                                                            ██
            ████████████████████████████████████████████████████████████████\n
-            ''')
+            '''.format(case))
 
-def longbio():
+def long(case):
     print ('''\n
            ████████████████████████████████████████████████████████████████
            ██                                                            ██
-           ██           BIOGRAPHY HAS MORE THAN 255 CHARACTERS           ██   
+           ██           {} HAS MORE THAN 255 CHARACTERS                  ██   
            ██                                                            ██
            ████████████████████████████████████████████████████████████████\n
-            ''')
+            '''.format(case)) 
 
-def shortbio():
+def current(case):
     print ('''\n
            ████████████████████████████████████████████████████████████████
            ██                                                            ██
-           ██           BIOGRAPHY HAS LESS THAN 255 CHARACTERS           ██   
+           ██                   THE CURRENT {} IS                        ██
            ██                                                            ██
            ████████████████████████████████████████████████████████████████\n
-            ''')            
-
-def currentbio():
-    print ('''\n
-           ████████████████████████████████████████████████████████████████
-           ██                                                            ██
-           ██                   THE CURRENT BIOGRAPHY                    ██
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████\n
-        ''')
-
-def currenthob():
-    print ('''\n
-           ████████████████████████████████████████████████████████████████
-           ██                                                            ██
-           ██                     THE CURRENT HOBBIE                     ██
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████\n
-        ''')
-
-def enterhobies():
-    print ('''\n
-           ████████████████████████████████████████████████████████████████
-           ██                                                            ██
-           ██       ENTER YOUR HOBBIES - NO MORE THAN 255 CHARACTER      ██   
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████\n
-            ''')
-
-def longhob():
-    print ('''\n
-           ████████████████████████████████████████████████████████████████
-           ██                                                            ██
-           ██            HOBBIES HAS MORE THAN 255 CHARACTERS            ██   
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████\n
-            ''')
+        '''.format(case))
 
 def entername():
     print ('''\n
@@ -469,7 +303,7 @@ def entersexfm():
            ██                                                            ██
            ████████████████████████████████████████████████████████████████\n
             ''')
-    
+
 def candidate():
     print ('''\n
            ████████████████████████████████████████████████████████████████
@@ -507,24 +341,6 @@ def listofreasons():
 
                         REASON 5 IS:    {}\n
             '''.format(REASON1,REASON2,REASON3,REASON4,REASON5))
-
-def invalidname ():
-    print ('''\n
-           ████████████████████████████████████████████████████████████████
-           ██                                                            ██
-           ██                    THE NAME IS INVALID                     ██
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████\n
-            ''')
-
-def validname ():
-    print ('''\n
-           ████████████████████████████████████████████████████████████████
-           ██                                                            ██
-           ██                     THE NAME IS VALID                      ██
-           ██                                                            ██
-           ████████████████████████████████████████████████████████████████\n
-            ''')
 
 def enterdetails ():
     print ('''\n
@@ -699,8 +515,6 @@ def updatereports():
             ████████████████████████████████████████████████████████████████\n
             ''')
 
-
-
 def reportsome():
     print ('''\n
            ████████████████████████████████████████████████████████████████
@@ -727,7 +541,6 @@ def updatereports1():
             ████████████████████████████████████████████████████████████████\n
             ''')
 
-
 def nameavailable():
         print (f"\t\t\t  STUDENT 1 IS {NAME1}")
         print (f"\t\t\t  STUDENT 2 IS {NAME2}")
@@ -740,15 +553,6 @@ def clears ():
 def clearnscreen():
     clears()
     logo()
-
-def invaliddate1():
-    invaliddate()
-    time.sleep(2)
-
-def invalidopt():
-    invalidoption ()
-    time.sleep(2)
-
 
 #------------------------------CONSTANTES------------------------------------#
 
@@ -1262,11 +1066,11 @@ def entersex():
     return sex
 
 def enterbio():
-    enterbiog()
+    enterData("BIO")
     ebio = input("\t\t\tENTER BIOGRAPHY:")
     while len(ebio) > 256:
         clears()
-        longbio()
+        long("BIO")
         time.sleep(2)
         clears()
         ebio = input("\t\t\tENTER BIOGRAPHY:")
@@ -1274,14 +1078,14 @@ def enterbio():
     return ebio
 
 def enterhob():
-    enterhobies()
+    enterData("HOBBY")
     ehob = input("\t\t\tENTER HOBBIE:")
     while len(ehob) > 256:
         clears()
         invalidoption()
         time.sleep(2)
         clears()
-        enterhobies()
+        enterData("HOBBY")
         ehob = input("\t\t\tENTER HOBBIE:")
     clears()
     return ehob
@@ -1404,7 +1208,7 @@ def ignorereport(X, filas, columnas):
 #-----------------------------------MODULOS PROGRAMA-----------------------------------#
 
 def userMainMenu():
-    initialscreen()
+    userMen()
     optUserMaM = input("\t\t\t\t ENTER THE OPTION: ")
     clears()
     while optUserMaM != "0":
@@ -1416,26 +1220,26 @@ def userMainMenu():
             userMenuMatch()
         elif optUserMaM == "4":
             clears ()
-            initialscreen()
+            userMen()
             underconstruction ()
             time.sleep (2)
         elif optUserMaM == "5":
             roulette()
         elif optUserMaM != "0" and optUserMaM != "1" and optUserMaM != "2" and optUserMaM != "3" and optUserMaM != "4" and optUserMaM != "5":
             clears ()
-            initialscreen()
+            userMen()
             invalidoption()
             time.sleep (2)
         if optUserMaM == "0":
             clears()
         else:
             clears()
-            initialscreen()
+            userMen()
             optUserMaM = input("\t\t\t\t ENTER THE OPTION: ")
 
 def userMenuManP():
     clears ()
-    submenu1 ()
+    userMen ()
     optUserManP = input("\t\t\tSUBSELECT AN OPTION FROM MENU 1: ")
     optUserManP = optUserManP.lower()
     while optUserManP != "c":
@@ -1445,19 +1249,19 @@ def userMenuManP():
             userDeleteProf()
         elif optUserManP != "a" and optUserManP != "b" and optUserManP != "c":
             clears ()
-            submenu1 ()
+            userMen ()
             invalidoption()
             time.sleep (2)
         elif optUserManP == "c":
             clears()
         clears ()
-        submenu1 ()
+        userMen ()
         optUserManP = input("\t\t\tSUBSELECT AN OPTION FROM MENU 1: ")
         optUserManP = optUserManP.lower()
 
 def userMenuEditData():
     clears ()
-    submenu1a ()
+    ChDataMen ()
     optUserEdiD = input("\t\t\tSELECT AN OPTION TO ADD INFORMATION: ")
     while optUserEdiD != "4":
         if optUserEdiD == "1":
@@ -1465,20 +1269,20 @@ def userMenuEditData():
         elif optUserEdiD == "2":
             userEditBio()
         elif optUserEdiD == "3":
-            userEditHobbie()
+            userEditHobby()
         elif optUserEdiD == "4":
             clears ()
         clears ()
-        submenu1a ()
+        ChDataMen ()
         optUserEdiD = input("\t\t\tSELECT AN OPTION TO ADD INFORMATION: ")
 
 def userEditDate():
     clears ()
     currentdate1()
-    changedate()
-    optChDate = input("\t\t\t ENTER THE OPTION:  ")
-    while optChDate != "2":
-        if optChDate == "1":
+    changeData()
+    optUserChDate = input("\t\t\t ENTER THE OPTION:  ")
+    while optUserChDate != "2":
+        if optUserChDate == "1":
             day = days()
             month = months()
             year = years()
@@ -1487,216 +1291,350 @@ def userEditDate():
                 students[spos][4] = str(userDateBirth)
                 students[spos][5] = age(userDateBirth)
             else:
-                invaliddate()
+                valScreen("DATE", "INVALID")
                 time.sleep(2)
-        elif optChDate != "1" and optChDate != "2":
+        elif optUserChDate != "1" and optUserChDate != "2":
             clears()
             invalidoption()
             time.sleep(2)
-        elif optChDate == "2":
+        elif optUserChDate == "2":
             clears()
         clears ()
         currentdate1()
-        changedate()
-        optChDate = input("\t\t\t ENTER THE OPTION:  ")
+        changeData()
+        optUserChDate = input("\t\t\t ENTER THE OPTION:  ")
 
 def userEditBio():
     clears()
-    currentbio()
+    current("BIO")
     displaybio()
-    changebio()
-    s_opt21 = input("\t\t\t ENTER THE OPTION: ")
-    while s_opt21 != "2":
-        if s_opt21 == "1":
+    changeData()
+    optUserChBio = input("\t\t\t ENTER THE OPTION: ")
+    while optUserChBio != "2":
+        if optUserChBio == "1":
             clears()
             nbio = enterbio()
             students[spos][7] = nbio
-        elif s_opt21 != "1" and s_opt21 !="2":
+        elif optUserChBio != "1" and optUserChBio !="2":
             invalidoption()
             time.sleep (2)
             clears()
-            currentbio()
+            current("BIO")
             displaybio()
-            changebio()
-            s_opt21 = input("\t\t\t ENTER THE OPTION: ")
+            changeData()
+            optUserChBio = input("\t\t\t ENTER THE OPTION: ")
 
-def userEditHobbie():
+def userEditHobby():
     clears()
-    currenthob()
+    current("HOBBY")
     displayhob()
-    changehob()
-    s_opt3 = input("\t\t\t ENTER THE OPTION:  ")
-    while s_opt3 != "2":
-        if s_opt3 == "1":
+    changeData()
+    optUserChHob = input("\t\t\t ENTER THE OPTION:  ")
+    while optUserChHob != "2":
+        if optUserChHob == "1":
             clears()
-            enterhobies()
+            enterData("HOBBY")
             nhob = input("\t\t\t WRITE YOUR HOBBIES: ")
             nhob = hobvalidator(nhob)
             if nhob != -1:
                 students[spos][8] = nhob
             else:
-                longbio()
-        elif s_opt3 != "2" and s_opt3 != "1":
+                long("HOBBY")
+        elif optUserChHob != "2" and optUserChHob != "1":
             invalidoption()
             time.sleep (2)
         clears()
-        currenthob()
+        current("HOBBY")
         displayhob()
-        changehob()
-        s_opt3 = input("\t\t\t ENTER THE OPTION:  ")
+        changeData()
+        optUserChHob = input("\t\t\t ENTER THE OPTION:  ")
 
 def userDeleteProf():
     clears ()
     delprofile()
-    s_optb = input("\t\t\tSELECT AN OPTION FROM MENU: ")
-    if s_optb == "1":
+    optUserDelP = input("\t\t\tSELECT AN OPTION FROM MENU: ")
+    if optUserDelP == "1":
         deadprofile(students, spos, SCT, reports, RRT)
         clears()
-    elif s_optb == "2":
+    elif optUserDelP == "2":
         clears()
     else:
         invalidoption()
         time.sleep(2)
 
 def userMenuManC():
-                        global ncand
-                        clears ()
-                        submenu2 ()
-                        s_opt21 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 2: ")
-                        s_opt21 = s_opt21.lower()
-                        while s_opt21 != "c":
-                            if s_opt21 == "a":
-                                clears()
-                                SHOWCANDIDATES(students,SRT,3,SCT)
-                                matching()
-                                s_opt212 = input("\n\t\t\t ENTER OPTION: ")
-                                while s_opt212 != "2":
-                                    if s_opt212 == "1":
-                                        clears()
-                                        SHOWCANDIDATES(students,SRT,3,SCT)
-                                        enternumber()
-                                        alist = acandidate (students, SRT, SCT)
-                                        ncand = input("\n\t\t\t ENTER CANDIDATE NUMBER: ")
-                                        if ncand.isdigit():
-                                            ncand = int(ncand)
-                                            if (ncand in alist) and ncand != spos:
-                                                clears()
-                                                candidate()
-                                                matches()
-                                                match = input("\t\t\t ENTER OPTION: ")
-                                                if match == "1":
-                                                    likes[spos][ncand] = 1
-                                                elif match == "0":
-                                                    likes[spos][ncand] = 0
-                                        else:
-                                            invalidoption()
-                                    if s_opt212 != "1" and s_opt212 == "2":
-                                        clears()
-                                        invalidoption()
-                                    clears()
-                                    SHOWCANDIDATES(students,SRT,3,SCT)
-                                    matching()
-                                    s_opt212 = input("\n\t\t\t ENTER OPTION: ")
-                            elif s_opt21 == "b":
-                                clears()
-                                reportsome()
-                                s_opt214 = input("\n\t\t\t ENTER OPTION: ")
-                                while s_opt214 != "2":
-                                    if s_opt214 == "1":
-                                        clears()
-                                        SHOWCANDIDATES(students,SRT,3,SCT)
-                                        rcand = input("\n\t\t WHO DO YOU WANT TO REPORT, CHOOSE NUMBER OR NAME: ")
-                                        rname = namesearch (students, SRT, rcand)
-                                        if rcand.isdigit():
-                                            rcand = int(rcand)
-                                            alist = acandidate (students, SRT, SCT)
-                                            if (rcand in alist) and rcand != spos:
-                                                clears()
-                                                rpos = reportspace(reports,RRT)
-                                                if rpos == -1:
-                                                    contactmod()
-                                                else:
-                                                    filler(reports, rpos, RCT, students, spos, rcand)
-                                        elif rname != -1 and rname != spos:
-                                                clears()
-                                                rpos = reportspace(reports,RRT)
-                                                if rpos == -1:
-                                                    contactmod()
-                                                else:
-                                                    filler(reports, rpos, RCT, students, spos, rname)
-                                        else:
-                                            invalidoption()
-                                            time.sleep (2)
-                                    elif s_opt214 != "1" and s_opt214 != "2":
-                                            clears()
-                                            invalidoption()
-                                            time.sleep(2)
-                                    if s_opt214 == "2":
-                                        clears()
-                                    clears()
-                                    reportsome()
-                                    s_opt214 = input("\n\t\t\t ENTER OPTION: ")
-                            elif s_opt21 != "a" and s_opt21 != "b" and s_opt21 != "c":
-                                clears ()
-                                submenu2 ()
-                                invalidoption ()
-                                time.sleep (2)
-                            clears ()
-                            submenu2 ()
-                            s_opt21 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 2: ")
-                            s_opt21 = s_opt21.lower()
+    clears ()
+    userMen ()
+    optUserManC = input("\t\t\tSUBSELECT AN OPTION FROM MENU 2: ")
+    optUserManC = optUserManC.lower()
+    while optUserManC != "c":
+        if optUserManC == "a":
+            userCheckCand()
+        elif optUserManC == "b":
+            userReportCand()
+        elif optUserManC != "a" and optUserManC != "b" and optUserManC != "c":
+            clears ()
+            userMen ()
+            invalidoption ()
+            time.sleep (2)
+        clears ()
+        userMen ()
+        optUserManC = input("\t\t\tSUBSELECT AN OPTION FROM MENU 2: ")
+        optUserManC = optUserManC.lower()
+
+def userCheckCand():
+    clears()
+    SHOWCANDIDATES(students,SRT,3,SCT)
+    matching()
+    s_opt212 = input("\n\t\t\t ENTER OPTION: ")
+    while s_opt212 != "2":
+        if s_opt212 == "1":
+            clears()
+            SHOWCANDIDATES(students,SRT,3,SCT)
+            enternumber()
+            alist = acandidate (students, SRT, SCT)
+            ncand = input("\n\t\t\t ENTER CANDIDATE NUMBER: ")
+            if ncand.isdigit():
+                ncand = int(ncand)
+                if (ncand in alist) and ncand != spos:
+                    clears()
+                    candidate()
+                    matches()
+                    match = input("\t\t\t ENTER OPTION: ")
+                    if match == "1":
+                        likes[spos][ncand] = 1
+                    elif match == "0":
+                        likes[spos][ncand] = 0
+            else:
+                invalidoption()
+        if s_opt212 != "1" and s_opt212 == "2":
+            clears()
+            invalidoption()
+        clears()
+        SHOWCANDIDATES(students,SRT,3,SCT)
+        matching()
+        s_opt212 = input("\n\t\t\t ENTER OPTION: ")
+
+def userReportCand():
+    clears()
+    reportsome()
+    optUserRepC = input("\n\t\t\t ENTER OPTION: ")
+    while optUserRepC != "2":
+        if optUserRepC == "1":
+            clears()
+            SHOWCANDIDATES(students,SRT,3,SCT)
+            rcand = input("\n\t\t WHO DO YOU WANT TO REPORT, CHOOSE NUMBER OR NAME: ")
+            rname = namesearch (students, SRT, rcand)
+            if rcand.isdigit():
+                rcand = int(rcand)
+                alist = acandidate (students, SRT, SCT)
+                if (rcand in alist) and rcand != spos:
+                    clears()
+                    rpos = reportspace(reports,RRT)
+                    if rpos == -1:
+                        contactmod()
+                    else:
+                        filler(reports, rpos, RCT, students, spos, rcand)
+            elif rname != -1 and rname != spos:
+                    clears()
+                    rpos = reportspace(reports,RRT)
+                    if rpos == -1:
+                        contactmod()
+                    else:
+                        filler(reports, rpos, RCT, students, spos, rname)
+            else:
+                invalidoption()
+                time.sleep (2)
+        elif optUserRepC != "1" and optUserRepC != "2":
+                clears()
+                invalidoption()
+                time.sleep(2)
+        if optUserRepC == "2":
+            clears()
+        clears()
+        reportsome()
+        optUserRepC = input("\n\t\t\t ENTER OPTION: ")
 
 def userMenuMatch():
-                        global sper,lgiven,lreceived
-                        clears ()
-                        submenu3 ()
-                        s_opt32 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 3: ")
-                        while s_opt32 != "d":
-                            if s_opt32 == "a":
-                                clears ()
-                                submenu3a ()
-                                s_opt324 = input("\t\t\t\t   ENTER OPTION: ")
-                                while s_opt324 != "0":
-                                    if s_opt324 == "1":
-                                        clears()
-                                        submenu3a()
-                                        sper = calmatches (likes, LCT, spos)
-                                        showpercentage()
-                                        time.sleep(2)
-                                    elif s_opt324 == "2":
-                                        clears()
-                                        submenu3a()
-                                        lgiven = givenlikes(likes, LCT, spos)
-                                        lgivennnot ()
-                                        time.sleep(2)
-                                    elif s_opt324 == "3":
-                                        clears()
-                                        submenu3a()
-                                        lreceived = receivedlikes(likes, LCT, spos)
-                                        lreceivednnot ()
-                                        time.sleep(2)
-                                    elif s_opt324 != "1" and s_opt324 != "2" and s_opt324 != "3":
-                                        invalidoption()
-                                        time.sleep (2)
-                                    clears ()
-                                    submenu3a ()
-                                    s_opt324 = input("\t\t\t\t   ENTER OPTION: ")
-                            elif s_opt32 == "b":
-                                clears ()
-                                submenu3 ()
-                                underconstruction ()
-                                time.sleep (2)
-                            elif s_opt32 == "c":
-                                clears ()
-                                bonus2()
-                            elif s_opt32 != "a" and s_opt32 != "b" and s_opt32 != "c" and s_opt32 != "d":
-                                clears ()
-                                submenu3 ()
-                                invalidoption ()
-                                time.sleep (2)
-                            clears ()
-                            submenu3 ()
-                            s_opt32 = input("\t\t\tSUBSELECT AN OPTION FROM MENU 3: ")
+    clears ()
+    userMen ()
+    optUserMatch = input("\t\t\tSUBSELECT AN OPTION FROM MENU 3: ")
+    while optUserMatch != "d":
+        if optUserMatch == "a":
+            userCheckMatch()
+        elif optUserMatch == "b":
+            clears ()
+            userMen ()
+            underconstruction ()
+            time.sleep (2)
+        elif optUserMatch == "c":
+            clears ()
+            bonus2()
+        elif optUserMatch != "a" and optUserMatch != "b" and optUserMatch != "c" and optUserMatch != "d":
+            clears ()
+            userMen ()
+            invalidoption ()
+            time.sleep (2)
+        clears ()
+        userMen ()
+        optUserMatch = input("\t\t\tSUBSELECT AN OPTION FROM MENU 3: ")
+
+def userCheckMatch():
+    global sper,lgiven,lreceived
+    clears ()
+    matchSubMen ()
+    optUserCheckM = input("\t\t\t\t   ENTER OPTION: ")
+    while optUserCheckM != "0":
+        if optUserCheckM == "1":
+            clears()
+            matchSubMen()
+            sper = calmatches (likes, LCT, spos)
+            showpercentage()
+            time.sleep(2)
+        elif optUserCheckM == "2":
+            clears()
+            matchSubMen()
+            lgiven = givenlikes(likes, LCT, spos)
+            lgivennnot ()
+            time.sleep(2)
+        elif optUserCheckM == "3":
+            clears()
+            matchSubMen()
+            lreceived = receivedlikes(likes, LCT, spos)
+            lreceivednnot ()
+            time.sleep(2)
+        elif optUserCheckM != "1" and optUserCheckM != "2" and optUserCheckM != "3":
+            invalidoption()
+            time.sleep (2)
+        clears ()
+        matchSubMen ()
+        optUserCheckM = input("\t\t\t\t   ENTER OPTION: ")
+
+def modMainMenu():
+    modMen()
+    optModMaM = input("\t\t\t\t ENTER THE OPTION: ")
+    if optModMaM == "0":
+        exit = False
+        clears()
+    while optModMaM != "0":
+        if optModMaM == "1":
+            modManageUser()
+        elif optModMaM == "2":
+            modManageRep()
+        elif optModMaM != "1" and optModMaM != "2" and optModMaM != "3" and optModMaM != "0":
+                clears()
+                modMen()
+                invalidoption()
+                time.sleep(2)
+        elif optModMaM == "0":
+            exit = False
+            clears()
+        else:
+            clears()
+            modMen()
+            optModMaM = input("\t\t\t\t ENTER THE OPTION: ")
+
+def modManageUser():
+    clears ()
+    modMen ()
+    s_opt88 = input("\t\t\t\t ENTER THE OPTION: ")
+    s_opt88 = s_opt88.lower()
+    while s_opt88 != "b":
+        if s_opt88 == "a":
+            clears()
+            SHOWCANDIDATES(students,SRT,3,SCT)
+            mdelprofile()
+            s_opt888 = input("\n\t\t\t ENTER OPTION: ")
+            while s_opt888 != "2":
+                if s_opt888 == "1":
+                    clears()
+                    SHOWCANDIDATES(students,SRT,3,SCT)
+                    enternon()
+                    alist = acandidate (students, SRT, SCT)
+                    rcand = input("\n\t\t WHO DO YOU WANT TO ERASE, CHOOSE NUMBER OR NAME: ")
+                    rname = namesearch (students, SRT, rcand)
+                    if rcand.isdigit():
+                        rcand = int(rcand)
+                        alist = acandidate (students, SRT, SCT)
+                        if (rcand in alist):
+                            clears()
+                            deadprofile(students, rcand, SCT, reports, RRT)
+                    elif rname != -1 and rname != spos:
+                            clears()
+                            deadprofile(students, rname, SCT, reports, RRT)
+                    else:
+                        invalidoption()
+                        time.sleep (2)
+                if s_opt888 != "1" and s_opt888 == "2":
+                    clears()
+                    invalidoption()
+                clears()
+                SHOWCANDIDATES(students,SRT,3,SCT)
+                mdelprofile()
+                s_opt888 = input("\n\t\t\t ENTER OPTION: ")
+        elif s_opt88 != "a" and s_opt88 != "b":
+            clears()
+            modMen()
+            invalidoption()
+            time.sleep(2)
+        clears ()
+        modMen ()
+        s_opt88 = input("\t\t\t\t ENTER THE OPTION: ")
+
+def modManageRep():
+    clears ()
+    modMen ()
+    s_opt77 = input("\t\t\t\t ENTER THE OPTION: ")
+    s_opt77 = s_opt77.lower()
+    while s_opt77 != "c":
+        if s_opt77 == "a":
+            clears()
+            showrlist(reports, RRT)
+            rl = lreports (reports, RRT, RCT)
+            updatereports()
+            uopt = input("\t\t\t ENTER OPTION NUMBER:")
+            if uopt == "1" and len(rl) == 0:
+                nothing()
+                time.sleep(2)
+                clears()
+            while uopt != "2" and len(rl) !=0:
+                if uopt == "1":
+                    clears()
+                    showrlist(reports, RRT)
+                    rl = lreports (reports, RRT, RCT)
+                    ropt = input("\t\t\t\t\t\t ENTER THE REPORT NUMBER YOU WANT TO UPDATE:")
+                    if ropt.isdigit():
+                        ropt = int (ropt)
+                        if ropt in rl:
+                            clears()
+                            showrlist(reports, RRT)
+                            updatereports1()
+                            aopt = input("\t\t\t ENTER THE ACTION NUMBER:")
+                            if aopt ==  "1":
+                                changendeac(reports, ropt, RCT, students, SCT)
+                            elif aopt == "2":
+                                ignorereport(reports, ropt, RCT)
+                rl = lreports (reports, RRT, RCT)
+                clears()
+                showrlist(reports, RRT)
+                updatereports()
+                uopt = input("\t\t\t ENTER OPTION NUMBER:")
+                if uopt == "1" and len(rl) == 0:
+                    nothing()
+                    time.sleep(2)
+                    clears()
+        elif s_opt77 == "b":
+            clears()
+            bonus1()
+        elif s_opt77 != "a" and s_opt77 != "b" and s_opt77 != "c":
+            clears()
+            modMen()
+            invalidoption()
+            time.sleep(2)
+        clears ()
+        modMen ()
+        s_opt77 = input("\t\t\t\t ENTER THE OPTION: ")
+
 
 #-------------------------------PROGRAMA--------------------------------------#
 CYEAR = int(currentdate.year)
@@ -1706,7 +1644,6 @@ LOADLIKES(likes, LRT, LCT)
 SLOADBASICINFO(students, SRT ,SCT)
 MLOADBASICINFO(moderator,MRT, MCT)
 RLOADBASICINFO(reports, RRT, RCT)
-
 
 students[0][1] = "1"
 students[0][2] = "1"
@@ -1749,123 +1686,7 @@ while opt != "2" and failat != 3:
                 mgreetings()
                 time.sleep(2)
                 clears()
-                minitialscreen()
-                s_opt99 = input("\t\t\t\t ENTER THE OPTION: ")
-                if s_opt99 == "0":
-                    exit = False
-                    clears()
-                while s_opt99 != "0":
-                    if s_opt99 == "1":
-                        clears ()
-                        msubmenu1 ()
-                        s_opt88 = input("\t\t\t\t ENTER THE OPTION: ")
-                        s_opt88 = s_opt88.lower()
-                        while s_opt88 != "b":
-                            if s_opt88 == "a":
-                                clears()
-                                SHOWCANDIDATES(students,SRT,3,SCT)
-                                mdelprofile()
-                                s_opt888 = input("\n\t\t\t ENTER OPTION: ")
-                                while s_opt888 != "2":
-                                    if s_opt888 == "1":
-                                        clears()
-                                        SHOWCANDIDATES(students,SRT,3,SCT)
-                                        enternon()
-                                        alist = acandidate (students, SRT, SCT)
-                                        rcand = input("\n\t\t WHO DO YOU WANT TO ERASE, CHOOSE NUMBER OR NAME: ")
-                                        rname = namesearch (students, SRT, rcand)
-                                        if rcand.isdigit():
-                                            rcand = int(rcand)
-                                            alist = acandidate (students, SRT, SCT)
-                                            if (rcand in alist):
-                                                clears()
-                                                deadprofile(students, rcand, SCT, reports, RRT)
-                                        elif rname != -1 and rname != spos:
-                                                clears()
-                                                deadprofile(students, rname, SCT, reports, RRT)
-                                        else:
-                                            invalidoption()
-                                            time.sleep (2)
-                                    if s_opt888 != "1" and s_opt888 == "2":
-                                        clears()
-                                        invalidoption()
-                                    clears()
-                                    SHOWCANDIDATES(students,SRT,3,SCT)
-                                    mdelprofile()
-                                    s_opt888 = input("\n\t\t\t ENTER OPTION: ")
-                            elif s_opt88 != "a" and s_opt88 != "b":
-                                clears()
-                                msubmenu1()
-                                invalidoption()
-                                time.sleep(2)
-                            clears ()
-                            msubmenu1 ()
-                            s_opt88 = input("\t\t\t\t ENTER THE OPTION: ")
-                    elif s_opt99 == "2":
-                        clears ()
-                        msubmenu2 ()
-                        s_opt77 = input("\t\t\t\t ENTER THE OPTION: ")
-                        s_opt77 = s_opt77.lower()
-                        while s_opt77 != "c":
-                            if s_opt77 == "a":
-                                clears()
-                                showrlist(reports, RRT)
-                                rl = lreports (reports, RRT, RCT)
-                                updatereports()
-                                uopt = input("\t\t\t ENTER OPTION NUMBER:")
-                                if uopt == "1" and len(rl) == 0:
-                                    nothing()
-                                    time.sleep(2)
-                                    clears()
-                                while uopt != "2" and len(rl) !=0:
-                                    if uopt == "1":
-                                        clears()
-                                        showrlist(reports, RRT)
-                                        rl = lreports (reports, RRT, RCT)
-                                        ropt = input("\t\t\t\t\t\t ENTER THE REPORT NUMBER YOU WANT TO UPDATE:")
-                                        if ropt.isdigit():
-                                            ropt = int (ropt)
-                                            if ropt in rl:
-                                                clears()
-                                                showrlist(reports, RRT)
-                                                updatereports1()
-                                                aopt = input("\t\t\t ENTER THE ACTION NUMBER:")
-                                                if aopt ==  "1":
-                                                    changendeac(reports, ropt, RCT, students, SCT)
-                                                elif aopt == "2":
-                                                    ignorereport(reports, ropt, RCT)
-                                    rl = lreports (reports, RRT, RCT)
-                                    clears()
-                                    showrlist(reports, RRT)
-                                    updatereports()
-                                    uopt = input("\t\t\t ENTER OPTION NUMBER:")
-                                    if uopt == "1" and len(rl) == 0:
-                                        nothing()
-                                        time.sleep(2)
-                                        clears()
-                            elif s_opt77 == "b":
-                                clears()
-                                bonus1()
-                            elif s_opt77 != "a" and s_opt77 != "b" and s_opt77 != "c":
-                                clears()
-                                msubmenu2()
-                                invalidoption()
-                                time.sleep(2)
-                            clears ()
-                            msubmenu2 ()
-                            s_opt77 = input("\t\t\t\t ENTER THE OPTION: ")
-                    elif s_opt99 != "1" and s_opt99 != "2" and s_opt99 != "3" and s_opt99 != "0":
-                            clears()
-                            minitialscreen()
-                            invalidoption()
-                            time.sleep(2)
-                    elif s_opt99 == "0":
-                        exit = False
-                        clears()
-                    else:
-                        clears()
-                        minitialscreen()
-                        s_opt99 = input("\t\t\t\t ENTER THE OPTION: ")
+                modMainMenu()
             elif email == 0 and epasw == 0:
                 clears()
             else:
